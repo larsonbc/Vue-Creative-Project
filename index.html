@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Name Gender Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1545693315-85b6be26a3d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 1300px 850px;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+    }
+
+    form {
+        text-align: center;
+        color: white;
+    }
+
+    p {
+        text-align: center;
+        color: white;
+    }
+
+    div {
+        text-align: center;
+        color: white;
+    }
+
+    hr {
+        color: black;
+    }
+
+    footer {
+        /*padding: 10px 20px;*/
+        color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <br>
+
+        <h1>Name Gender Calculator</h1>
+
+        <br>
+        <br>
+        <br>
+
+        <hr>
+
+        <p>The Name Gender Calculator presents the the most probable gender of a person on earth with a specific name. To check the gender of a name, enter the name in the box below.</p>
+
+        <form v-on:submit.prevent="GetInfo">
+            <input v-model="inputName" placeholder="Name"></p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div v-if="name">
+            <h2>Name entered: {{name}}</h2>
+        </div>
+        <div v-if="gender">
+            <h2>Name gender: {{gender}}</h2>
+        </div>
+        <div v-if="probability">
+            <h2>Probability of {{name}} being {{gender}}*: {{probability}}%</h2>
+        </div>
+        <div v-if="count">
+            <h2>Count**: {{count}}</h2>
+        </div>
+        <div v-if="probability">
+            <br>
+            <h3>*Probability indicates the ratio of males to females</h3>
+        </div>
+        <div v-if="count">
+            <h3>**Count represents the number of data rows examined in order to calculate the response</h3>
+        </div>
+
+        <!--<h2>Name entered: " + json.name + "</h2>"; results += "
+        <h2>Name gender: " + json.gender + "</h2>"; results += "
+        <h2>Probability of " + json.name + " being " + json.gender + "*: " + percent + "%</h2>"; results += "
+        <h2>Count**: " + json.count + "</h2>";-->
+
+        <hr>
+
+        <div id="footnotes">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script text="type/javascript" src="script.js">
+    </script>
+
+    <footer><a href="https://github.com/larsonbc/BYUCS260CreativeProject2.git" style="color: white">GitHub</a></footer>
+
+</body>
+
+</html>
